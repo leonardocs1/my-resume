@@ -4,7 +4,7 @@ import getUser from '../utils/getUser'
 const Index = ({ repos, user }) => {
   return (
     <div className='container mx-auto'>
-      <div className='grid grid-cols-2 pt-16'>
+      <div className='grid grid-cols-2 pt-16 leading-none'>
         <div>
           <h1 className='text-4xl uppercase'>Hi, I´m Leonardo Costa</h1>
           <h2 className='font-bold text-5xl uppercase'>Fullstack Developer</h2>
@@ -16,6 +16,11 @@ const Index = ({ repos, user }) => {
         </div>
         <div>
           <img src='/images/leonardo-costa.png'></img></div>
+      </div>
+
+      <div className='bg-white rounded-lg shadow-lg py-12 px-16'>
+        <h3 className='text-4xl text-center'>What I do</h3>
+        <p className='text-2xl'>Fullstack Developer</p>
       </div>
 
       {repos.map(repo => {
