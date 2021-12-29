@@ -1,6 +1,9 @@
 import React from 'react'
 import getUser from '../utils/getUser'
-import { FaLinkedin, FaGithub, FaTwitterSquare, FaWhatsapp } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaTwitterSquare, FaWhatsapp } from 'react-icons/fa'
+import { RiGitRepositoryLine } from 'react-icons/ri'
+import { GoGist, GoStar } from 'react-icons/go'
+import { FiUsers } from 'react-icons/fi'
 
 const Index = ({ repos, user }) => {
   return (
@@ -42,18 +45,22 @@ const Index = ({ repos, user }) => {
         </div>
       </div>
 
-      <p>Github stats: public repos: {user.public_repos} / public_gists: {user.public_gists} / followers: {user.followers}</p>
-
-      {
-        repos.map(repo => {
-          return (
-            <div key={repo.id} className='rounded bg-gray-200 mx-8 my-4 p-4 hover:shadow-md cursor-pointer'>
-              <h3 className='font-bold'>{repo.full_name}</h3>
-              <p>{repo.language} / Stars: {repo.stargazers_count}</p>
-            </div>
-          )
-        })
-      }
+      <div>
+        <h3 className='text-4xl font-bold text-center uppercase mt-10 text-purple'>Contribuições</h3>
+        <p className='text-center mb-4'>Github stats: <RiGitRepositoryLine className='inline-block' /> {user.public_repos} / <GoGist className='inline-block' /> {user.public_gists} /  <FiUsers className='inline-block' /> {user.followers}</p>
+        <div className='grid grid-cols-3 gap-2 mb-8'>
+          {
+            repos.map(repo => {
+              return (
+                <div key={repo.id} className='rounded bg-white p-4 hover:shadow-md cursor-pointer'>
+                  <h3 className='font-bold hover:underline'><a href={'https://github.com/' + repo.full_name} target='_blank'>{repo.full_name}</a></h3>
+                  <p>{repo.language} / <GoStar className='inline-block' />: {repo.stargazers_count}</p>
+                </div>
+              )
+            })
+          }
+        </div>
+      </div>
     </div >
   )
 }
