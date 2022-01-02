@@ -21,12 +21,17 @@ const Index = ({ repos, user }) => {
       <div>
         <h3 className='text-4xl font-bold text-center uppercase mt-10 mb-5 text-purple'>Educação</h3>
         <div className='md:grid md:grid-cols-2 leading-none bg-white rounded-lg shadow-lg mx-2'>
-          {[1, 2].map(i => (
-            <div className='border-dashed md:border-l md:border-t-0 border-t px-12 md:mb-0 py-6'>
-              <h4 className='text-lg uppercase font-bold mb-2 text-purple'>Grau de Graduação</h4>
-              <p className='text-2xl uppercase'>Sistemas de Informação<br />
-                <span className='text-lg normal-case font-bold'> Faculdade de Balsas - Unibalsas</span></p>
-            </div>))}
+
+          <div className='border-dashed md:border-l md:border-t-0 border-t px-12 md:mb-0 py-6'>
+            <h4 className='text-lg uppercase font-bold mb-2 text-purple'>Graduação</h4>
+            <p className='text-2xl uppercase'>Sistemas de Informação<br />
+              <span className='text-lg normal-case font-bold'> Faculdade de Balsas - Unibalsas</span></p>
+          </div>
+          <div className='border-dashed md:border-l md:border-t-0 border-t px-12 md:mb-0 py-6'>
+            <h4 className='text-lg uppercase font-bold mb-2 text-purple'>Curso Online</h4>
+            <p className='text-2xl uppercase'>FullStack Master<br />
+              <span className='text-lg normal-case font-bold'> DevPleno</span></p>
+          </div>
         </div>
       </div>
 
